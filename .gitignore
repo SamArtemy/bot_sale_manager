@@ -1,0 +1,44 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+.deploy/
+.aws/
+.codex/
+.agents/
+secrets/
+credentials/
+*service-account*.json
+google-tasks-*.json
+*credentials*.json
+*token*.json
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+
+# Customer data, database journals and backups
+/data/
+*.sqlite*
+*.db
+*.db-*
+*.bak
+*.backup
+*.dump
+*.log
+logs/
+*.zip
+*.tar*
+
+# Generated files and local tooling
+node_modules/
+dist/
+coverage/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,32 @@
+[Unit]
+Description=Sale Manager Telegram Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=botmanager
+Group=botmanager
+WorkingDirectory=/opt/bot-sale-manager
+EnvironmentFile=/opt/bot-sale-manager/.env
+ExecStart=/usr/bin/node /opt/bot-sale-manager/dist/src/main.js
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+UMask=0077
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+RestrictRealtime=true
+LockPersonality=true
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/bot-sale-manager/data
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,30 @@
+{
+  "name": "bot-sale-manager",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "start": "tsx src/main.ts",
+    "build": "tsc -p tsconfig.json",
+    "start:prod": "node dist/src/main.js",
+    "authorize:tasks": "tsx scripts/authorizeGoogleTasks.ts",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "check": "tsc --noEmit && npm test",
+    "security:secrets": "node scripts/checkSecrets.mjs"
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "googleapis": "^189.0.0",
+    "grammy": "^1.37.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  },
+  "license": "MIT"
+}
